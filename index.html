@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>an election about...</title>
+  <style>body{overflow:hidden;background:#000;color:#a1bd88;}button{font-size:2em;padding:5px 10px;background:#915047;color:#4e74b8;border-radius:12px;}#output{white-space:pre-wrap;margin-top:20px;font-size:24px;font-weight:bold;font-family:system-ui, courier,monospace;}</style>
+</head>
+<body>
+    <button onclick="generate()">vote</button>
+    <div id="output"></div>
+    <script>
+      const t='<br>b<i>c<h4>q<small>s<strong>'.split('<'),n='semiconductors0resistance0半導體0民主0通貨膨脹0網路攻擊0cyberattacks0allies0diplomacy0inflation0democracy'.split('0'),
+      s='discontent0聚集0gathering0tsò-hué0young0年輕0resilient0kian-tshî0堅持著0queer0critical0tsìn-pō0進步0kuan-kiān0關鍵'.split('0'),
+      l='solarpunk capital0Tâi-pak0the artsy district0駁二0the night market0iā-tshī-á0夜市0Tâi-lâm0海岸綫0hái-pinn-á0the sun-kissed island0Hua-liân0我們的島嶼0手搖杯店0milk tea stands'.split('0'),
+      li='tsuá-ting0燈籠0ian-hue-ki0仙女棒0neon signs0霓虹燈0moonlight0gue̍h-kng0月光0solar power0thài-iông-lîng0太陽能'.split('0'),
+      e='anxious0tio̍h-kip ê0焦慮的0defiant0strategic0huán-khòng ê0抗議的0hopeful0ū hi-bāng ê0還是有希望的'.split('0'),
+      i='hackers0hái-kheh0cats0niau-á0貓咪0dogs0káu-á0狗狗0migrants0sin tsū-bîn0新住民0students0學生們0citizens0公民0jîn-bîn0冬鹿 𐂂0blue magpies 𓅪0tn̂g-bué-suann-niû 𓅪0青鳥 𓅪0black bears0黑熊0oo-hîm0櫻花鉤吻鮭0Formosan salmon0bûn-pan0bîng-iú0盟友0we0我們'.split('0');
+  
+      const choose=a=>a[Math.random()*a.length|0];
+      
+      function generateScenario() {
+        return `An election about ${choose(n)}\n     ${choose(s)} @ ${choose(l)}\n          lit by ${choose(li)}\n               where ${choose(e)} ${choose(i)} vote ...`;
+      }
+  
+      function glitchText(txt) {
+        return txt.replace(/./g,c=>Math.random()<0.1?choose(t)+c:c);
+      }
+  
+      function generate() {
+        const o=document.getElementById('output'),sc=generateScenario(),gD=202.4,int=5.24;let eT=0,gl=false;
+        if(gl)return;gl=true;
+        const gE=()=>{ 
+          o.innerHTML=eT<gD?glitchText(sc):sc; 
+          if(eT<gD){eT+=int;setTimeout(gE,int)}else{gl=false};};
+        gE();
+      }
+    </script>
+  </body>
+</html>
